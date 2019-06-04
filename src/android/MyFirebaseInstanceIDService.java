@@ -13,7 +13,6 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
     private static final String TAG = "FCMPlugin";
 
     @Override
-    public void  onTokenRefresh(){
     public void onTokenRefresh(){
         // Get updated InstanceID token.
         String refreshedToken = FirebaseInstanceId.getInstance().getToken();
@@ -24,4 +23,3 @@ public class MyFirebaseInstanceIDService extends FirebaseInstanceIdService {
         //sendRegistrationToServer(refreshedToken);
     }
 }
-
