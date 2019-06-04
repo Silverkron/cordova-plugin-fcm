@@ -87,14 +87,14 @@ public class MyFirebaseMessagingService extends FirebaseMessagingService {
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
 
         notificationManager.notify(0 /* ID of notification */, notificationBuilder.build());
-    
-        @Override
-        public void onNewToken(String refreshedToken) {
-            super.onNewToken(refreshedToken);
-            //Log.e("TOKEN",refreshedToken);
-            //String refreshedToken = FirebaseInstanceId.getInstance().getToken();
-            Log.d(TAG, "Refreshed token: " + refreshedToken);
-            FCMPlugin.sendTokenRefresh( refreshedToken );
-        }
+    }
+
+    @Override
+    public void onNewToken(String refreshedToken) {
+        super.onNewToken(refreshedToken);
+        //Log.e("TOKEN",refreshedToken);
+        //String refreshedToken = FirebaseInstanceId.getInstance().getToken();
+        Log.d(TAG, "Refreshed token: " + refreshedToken);
+        FCMPlugin.sendTokenRefresh( refreshedToken );
     }
 }
